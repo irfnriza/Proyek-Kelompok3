@@ -5,7 +5,7 @@
 int kelompokQuestion1();
 int kelompokQuestion2();
 int poin;
-int *ptr = &poin
+int *ptr = &poin;
 int main(int argc, char const *argv[])
 {
 
