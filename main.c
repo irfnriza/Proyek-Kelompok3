@@ -46,9 +46,10 @@ int main(int argc, char const *argv[])
     strcpy(password, str[1]);
 
     if((strcmp(username, usernameInp)==0)&&(strcmp(password, passwordInp)==0)){
-        printf("Anda Berhasil Login!");
+        printf("Anda Berhasil Login!\n");
+    }
     else{
-        printf("Anda Gagal Login");
+        printf("Anda Gagal Login\n");
     }
         
     kelompokQuestion1();
