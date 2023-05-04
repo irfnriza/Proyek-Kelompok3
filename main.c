@@ -46,14 +46,14 @@ int main(int argc, char const *argv[])
         
         char jawaban;
     int poin[]= {0,0,0};
-
+    
     printf("pertanyaan ke 1\t\tpoin Rp:100.000\n");
     printf("Apa warna bendera Indonesia?\n");
     printf("A.Merah dan putih\t\tB.Biru dan kuning\nC.Hitam dan merah\t\tD.Hijau dan putih\n");
     printf("jawaban anda : ");
     scanf("%c", &jawaban);
     while (getchar() != '\n');
-    if (jawaban == 'A')
+    if (jawaban == 'A' || jawaban == 'a')
     {
         printf("benar\t\tpoin anda Rp:100000\n\n");
         printf("pertanyaan ke 2\t\tpoin Rp:200000\n");
@@ -62,7 +62,7 @@ int main(int argc, char const *argv[])
         printf("jawaban anda : ");
         scanf("%c", &jawaban);
         while (getchar() != '\n');
-        if (jawaban == 'D')
+        if (jawaban == 'D' || jawaban == 'd')
         {
             printf("benar\t\tpoin anda Rp:200.000\n\n");
             printf("pertanyaan ke 3\t\tpoin Rp:400.000\n");
@@ -71,7 +71,7 @@ int main(int argc, char const *argv[])
             printf("jawaban anda : ");
             scanf("%c", &jawaban);
             while (getchar() != '\n');
-            if (jawaban == 'A')
+            if (jawaban == 'A' || jawaban == 'a')
             {
                 printf("benar\t\tpoin anda Rp:400.000\n\n");
                 printf("pertanyaan ke 4\t\tpoin Rp:800.000\n");
@@ -80,7 +80,7 @@ int main(int argc, char const *argv[])
                 printf("jawaban anda : ");
                 scanf("%c", &jawaban);
                 while (getchar() != '\n');
-                if (jawaban == 'C')
+                if (jawaban == 'C' || jawaban == 'c')
                 {
                     printf("benar\t\tpoin anda Rp:800.000\n\n", poin[0]);
                     printf("pertanyaan ke 5\t\tpoin Rp:1.600.000\n");
@@ -89,7 +89,7 @@ int main(int argc, char const *argv[])
                     printf("jawaban anda : ");
                     scanf("%c", &jawaban);
                     while (getchar() != '\n');
-                    if (jawaban == 'A')
+                    if (jawaban == 'A' || jawaban == 'a')
                     {
                         poin[0] = 1600000;
                         printf("benar\t\tpoin anda Rp:1.600.000\n\n");
@@ -99,7 +99,7 @@ int main(int argc, char const *argv[])
                         printf("jawaban anda : ");
                         scanf("%c", &jawaban);
                         while (getchar() != '\n');
-                        if (jawaban == 'D')
+                        if (jawaban == 'D' || jawaban == 'd')
                         {
                             printf("benar\t\tpoin anda Rp:3.200.000\n\n");
                             printf("pertanyaan ke 7\t\tpoin Rp:6.400.000\n");
@@ -108,7 +108,7 @@ int main(int argc, char const *argv[])
                             printf("jawaban anda : ");
                             scanf("%c", &jawaban);
                             while (getchar() != '\n');
-                            if (jawaban == 'A')
+                            if (jawaban == 'A' || jawaban == 'a')
                             { 
                                 printf("benar\t\tpoin anda Rp:6.400.000\n\n");
                                 printf("pertanyaan ke 8\t\tpoin Rp:12.800.000\n");
@@ -117,7 +117,7 @@ int main(int argc, char const *argv[])
                                 printf("jawaban anda : ");
                                 scanf("%c", &jawaban);
                                 while (getchar() != '\n');
-                                if (jawaban == 'B')
+                                if (jawaban == 'B' || jawaban == 'b')
                                 {      
                                     printf("benar\t\tpoin anda Rp:12.800.000\n\n");
                                     printf("pertanyaan ke 9\t\tpoin Rp:25.600.000\n");
@@ -126,7 +126,7 @@ int main(int argc, char const *argv[])
                                     printf("jawaban anda : ");
                                     scanf("%c", &jawaban);
                                     while (getchar() != '\n');
-                                    if (jawaban == 'B')
+                                    if (jawaban == 'B' || jawaban == 'b')
                                     {
                                         printf("benar\t\tpoin anda Rp:25.600.000\n\n");
                                         printf("pertanyaan ke 10\t\tpoin Rp:51.200.000\n");
@@ -135,7 +135,7 @@ int main(int argc, char const *argv[])
                                         printf("jawaban anda : ");
                                         scanf("%c", &jawaban);
                                         while (getchar() != '\n');
-                                        if (jawaban == 'C')
+                                        if (jawaban == 'C' || jawaban == 'c')
                                         {
                                             poin[1] = 51200000 - poin[0];
                                             printf("benar\t\tpoin anda Rp:51.200.000\n\n");
@@ -146,7 +146,7 @@ int main(int argc, char const *argv[])
                                             scanf("%c", &jawaban);
                                             while (getchar() != '\n')
                                                 ;
-                                            if (jawaban == 'B')
+                                            if (jawaban == 'B' || jawaban == 'b')
                                             {
                                                 printf("benar\t\tpoin anda Rp:102.400.000\n\n");
                                                 printf("pertanyaan ke 12\t\tpoin Rp:204.800.000\n");
@@ -156,7 +156,7 @@ int main(int argc, char const *argv[])
                                                 scanf("%c", &jawaban);
                                                 while (getchar() != '\n')
                                                     ;
-                                                if (jawaban == 'D')
+                                                if (jawaban == 'D' || jawaban == 'd')
                                                 {                       
                                                     printf("benar\t\tpoin anda Rp:204.800.000\n\n");
                                                     printf("pertanyaan ke 13\t\tpoin Rp:409.600.000\n");
@@ -165,7 +165,7 @@ int main(int argc, char const *argv[])
                                                     printf("jawaban anda : ");
                                                     scanf("%c", &jawaban);
                                                     while (getchar() != '\n');
-                                                    if (jawaban == 'C')
+                                                    if (jawaban == 'C' || jawaban == 'c')
                                                     {                           
                                                         printf("benar\t\tpoin anda Rp:409.600.000\n\n");
                                                         printf("pertanyaan ke 14\t\tpoin Rp:819.200.000\n");
@@ -174,7 +174,7 @@ int main(int argc, char const *argv[])
                                                         printf("jawaban anda : ");
                                                         scanf("%c", &jawaban);
                                                         while (getchar() != '\n') ;
-                                                        if (jawaban == 'A')
+                                                        if (jawaban == 'A' || jawaban == 'a')
                                                         {                               
                                                             printf("benar\t\tpoin anda Rp:819.200.000\n\n");
                                                             printf("pertanyaan ke 15\t\tpoin Rp:1.638.400.000\n");
@@ -184,7 +184,7 @@ int main(int argc, char const *argv[])
                                                             scanf("%c", &jawaban);
                                                             while (getchar() != '\n')
                                                                 ;
-                                                            if (jawaban == 'D')
+                                                            if (jawaban == 'D' || jawaban == 'd')
                                                             {
                                                                 poin[2] = 1638400000 - poin[1] - poin[0];
                                                                 printf("benar\n\n");
