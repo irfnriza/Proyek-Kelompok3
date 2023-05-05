@@ -225,4 +225,64 @@ int kelompokQuestion2()
         printf("jawaban salah");
     }
     return *ptr;
-}        
+} 
+
+int kelompokQuestion3()
+{
+
+    
+    char jawaban;
+
+    
+    printf("pertanyaan ke 11\t\tpoin %d\n", poin);
+    printf("Siapakah penemu telepon?\n");
+    printf("A.Thomas Edison\t\tB.Alexander Graham Bell\nC.Nikola Tesla\t\tD.Albert Einstein\n");
+    printf("jawaban anda : ");
+    scanf("%c", &jawaban);
+    while (getchar() != '\n')
+        ;
+    if (jawaban == 'B' || jawaban == 'b')
+    {
+        printf("benar\t\tpoin anda %d\n\n", poin);
+        printf("pertanyaan ke 12\t\tpoin %d\n", poin *= 2);
+        printf("Siapakah penulis buku Harry Potter?\n");
+        printf("A.Stephen King\t\tB.George R.R. Martin\nC.Suzanne Collins\t\tD.J.K. Rowling\n");
+        printf("jawaban anda : ");
+        scanf("%c", &jawaban);
+        while (getchar() != '\n')
+            ;
+        if (jawaban == 'D' || jawaban == 'd')
+        {
+            printf("benar\t\tpoin anda %d\n\n", poin);
+            printf("pertanyaan ke 13\t\tpoin %d\n", poin *= 2);
+            printf("Apa nama negara terkecil di dunia?\n");
+            printf("A.San Marino\t\tB.Andorra\nC.Vatikan\t\tD.Liechtenstein\n");
+            printf("jawaban anda : ");
+            scanf("%c", &jawaban);
+            while (getchar() != '\n')
+                ;
+            if (jawaban == 'C' || jawaban == 'c')
+            {
+                printf("benar\t\tpoin anda %d\n\n", poin);
+                printf("pertanyaan ke 14\t\tpoin %d\n", poin *= 2);
+                printf("Apa nama sungai yang melintasi kota Paris?\n");
+                printf("A.Sungai Seine\t\tB.Sungai Thames\nC.Sungai Rhine\t\tD.Sungai Danube\n");
+                printf("jawaban anda : ");
+                scanf("%c", &jawaban);
+                while (getchar() != '\n')
+                    ;
+                if (jawaban == 'A' || jawaban == 'a')
+                {
+                    printf("benar\t\tpoin anda %d\n\n", poin);
+                    printf("pertanyaan ke 15\t\tpoin %d\n", poin *= 2);
+                    printf("Siapakah pelopor revolusi industri?\n");
+                    printf("A.Henry Ford\t\tB.Alexander Graham Bell\nC.Thomas Edison\t\tD.James Watt\n");
+                    printf("jawaban anda : ");
+                    scanf("%c", &jawaban);
+                    while (getchar() != '\n')
+                        ;
+                    if (jawaban == 'D' || jawaban == 'd')
+                    {
+                        printf("benar\t\tpoin anda %d", p\n\n);
+                        *ptr = poin;
+                    }
