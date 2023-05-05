@@ -141,4 +141,88 @@ int main(int argc, char const *argv[])
     return *ptr;
 }
         
-        
+int kelompokQuestion2()
+{
+
+    int poin = 0;
+    char jawaban;
+
+    poin += 1600000;
+    printf("pertanyaan ke 6\t\tpoin %d\n", poin);
+    printf("Di benua mana negara Rusia terletak?\n");
+    printf("A.Australia\t\tB.Amerika\nC.Afrika\t\tD.Eropa\n");
+    printf("jawaban anda : ");
+    scanf("%c", &jawaban);
+    while (getchar() != '\n')
+        ;
+    if (jawaban == 'D' || jawaban == 'd')
+    {
+        printf("benar\t\tpoin anda %d\n\n", poin);
+        printf("pertanyaan ke 7\t\tpoin %d\n", poin *= 2);
+        printf("Berapa jumlah provinsi di Indonesia saat ini?\n");
+        printf("A.31\t\tB.30\nC.41\t\tD.38\n");
+        printf("jawaban anda : ");
+        scanf("%c", &jawaban);
+        while (getchar() != '\n')
+            ;
+        if (jawaban == 'D')
+        {
+            printf("benar\t\tpoin anda %d\n\n", poin);
+            printf("pertanyaan ke 8\t\tpoin %d\n", poin *= 2);
+            printf("Siapakah presiden pertama Amerika Serikat?\n");
+            printf("A.George Washington\t\tB.Thomas Jefferson\nC.John F. Kennedy\t\tD.Abraham Lincoln\n");
+            printf("jawaban anda : ");
+            scanf("%c", &jawaban);
+            while (getchar() != '\n')
+                ;
+            if (jawaban == 'A' || jawaban == 'a')
+            {
+                printf("benar\t\tpoin anda %d\n\n", poin);
+                printf("pertanyaan ke 9\t\tpoin %d\n", poin *= 2);
+                printf("Apa nama ibukota Australia?\n");
+                printf("A.Sydney\t\tB.Canberra\nC.Melbourne\t\tD.Brisbane\n");
+                printf("jawaban anda : ");
+                scanf("%c", &jawaban);
+                while (getchar() != '\n')
+                    ;
+                if (jawaban == 'B' || jawaban == 'b')
+                {
+                    printf("benar\t\tpoin anda %d\n\n", poin);
+                    printf("pertanyaan ke 10\t\tpoin %d\n", poin *= 2);
+                    printf("Siapakah pelukis terkenal yang melukis Mona Lisa?\n");
+                    printf("A.Vincent van Gogh\t\tB.Leonardo da Vinci\nC.Pablo Picasso\t\tD.Michelangelo\n");
+                    printf("jawaban anda : ");
+                    scanf("%c", &jawaban);
+                    while (getchar() != '\n')
+                        ;
+                    if (jawaban == 'B' || jawaban == 'b')
+                    {
+                        printf("benar\t\tpoin anda Rp:1.600.000\n\n");
+                        *ptr = poin;
+                    }
+                    else
+                    {
+                        printf("jawaban salah");
+                    }
+                }
+                else
+                {
+                    printf("jawaban salah");
+                }
+            }
+            else
+            {
+                printf("jawaban salah");
+            }
+        }
+        else
+        {
+            printf("jawaban salah");
+        }
+    }
+    else
+    {
+        printf("jawaban salah");
+    }
+    return *ptr;
+}        
