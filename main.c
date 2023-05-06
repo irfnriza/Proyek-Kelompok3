@@ -7,47 +7,60 @@ int kelompokQuestion2();
 int kelompokQuestion3();
 int poin;
 int *ptr = &poin;
+
+    // Command Line Argument
 int main(int argc, char const *argv[])
 {
-
+    // memastikan argumen yang diinput sesuai ketentuan
        if (argc != 3)
        {
               printf("Login Gagal!\n");
               printf("Cara Login: ./FileAppProram username password");
        }
-
+    // deklarasikan variabel baru untuk menampung argumen yang diinput
        char usernameInp[30], passwordInp[30];
+       
+    // digunakan strcpy() untuk meng-copy string dari satu variabel ke variabel lain
        strcpy(usernameInp, argv[1]);
        strcpy(passwordInp, argv[2]);
 
        FILE *fptr;
-
+    // buka file login.bin
+    // gunakan mode 'rb' untuk read binary
        if ((fptr = fopen("database/login.bin", "rb")) == NULL)
        {
               printf("No File Detected!");
+    // program akan keluar jika file tidak ditemukan
               exit(1);
        }
-
+    // deklarasikan variabel acc untuk menyimpan isi dari file login.bin
        char acc[35];
        fread(acc, sizeof(char), sizeof(acc), fptr);
-
+       
+    // file fptr ditutup
        fclose(fptr);
-
+       
+    // deklarasikan variabel baru untuk menampung sementara hasil pemisahan dari variabel acc
        char *str[3];
        char username[30], password[30];
        int i = 0;
-
+       
+    // Digunakan strtok untuk memisahkan string dari karakter (huruf) tertentu
        str[i] = strtok(acc, "$");
        while (str[i++] != NULL)
        {
               str[i] = strtok(NULL, "$");
        }
-
+       
+    // hasil pemisahan disimpan ke dalam variabel str[0] dan str[1]
+    // Digunakan strcpy() untuk meng-copy string dari satu variabel ke variabel lain
        strcpy(username, str[0]);
        strcpy(password, str[1]);
 
+    // Gunakan strcmp() untuk membandingkan string dengan string yang lainnya
        if ((strcmp(username, usernameInp) == 0) && (strcmp(password, passwordInp) == 0))
        {
+    // jika login berhasil, maka akan langsung masuk ke dalam permainan
               printf(
                   "\t\t\t __        _______ _     ____ ___  __  __ _____   _____ ___    ____ _____  _    ____   ___  _   _ ___ ______ _            \n"
                   "\t\t\t \\ \\      / / ____| |   / ___/ _ \\|  \\/  | ____| |_   _/ _ \\  / ___|_   _|/ \\  |  _ \\ / _ \\| | | |_ _|__  / | |    \n"
