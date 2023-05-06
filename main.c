@@ -67,13 +67,6 @@ int main(int argc, char const *argv[])
                   "\t\t\t  \\ \\ /\\ / /|  _| | |  | |  | | | | |\\/| |  _|     | || | | | \\___ \\ | | / _ \\ | |_) | | | | | | || |  / /  | |     \n"
                   "\t\t\t   \\ V  V / | |___| |__| |__| |_| | |  | | |___    | || |_| |  ___) || |/ ___ \\|  _ <| |_| | |_| || | / /_  |_|          \n"
                   "\t\t\t    \\_/\\_/  |_____|_____\\____\\___/|_|  |_|_____|   |_| \\___/  |____/ |_/_/   \\_\\_| \\_\\____\\_\\___/|___/____| (_) \n\n\n\n\n\n");
-              ;
-       }
-       else
-       {
-              printf("Anda Gagal Login\n");
-       }
-
        printf(
            "  ___ _   _ _    ___ ___  \n"
            " | _ \\ | | | |  | __/ __| \n"
@@ -120,6 +113,10 @@ int main(int argc, char const *argv[])
        if (poin == 2000000000)
        {
               printf("Selamat Anda berhasil memperoleh hadiah utama. Pengetahuan Anda sangat luas!");
+       }
+       else
+       {
+              printf("Anda Gagal Login\n");
        }
 }
 int kelompokQuestion1()
@@ -460,10 +457,10 @@ int kelompokQuestion3()
                                    printf("jawaban anda : ");
                                    scanf("%c", &jawaban);
                                    while (getchar() != '\n')
-                                          ;
-                                   poin += 361600000;
+                                          ;                                 
                                    if (jawaban == 'D' || jawaban == 'd')
-                                   {
+                                   {        
+                                          poin += 361600000;
                                           printf("benar\t\tpoin anda %d\n", poin);
                                           *ptr = poin;
                                    }
