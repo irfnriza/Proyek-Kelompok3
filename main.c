@@ -4,285 +4,489 @@
 
 int kelompokQuestion1();
 int kelompokQuestion2();
+int kelompokQuestion3();
 int poin;
 int *ptr = &poin;
 int main(int argc, char const *argv[])
 {
 
-    if (argc != 3)
-    {
-        printf("Login Gagal!\n");
-        printf("Cara Login: ./FileAppProram username password");
-    }
+       if (argc != 3)
+       {
+              printf("Login Gagal!\n");
+              printf("Cara Login: ./FileAppProram username password");
+       }
 
-    char usernameInp[30], passwordInp[30];
-    strcpy(usernameInp, argv[1]);
-    strcpy(passwordInp, argv[2]);
+       char usernameInp[30], passwordInp[30];
+       strcpy(usernameInp, argv[1]);
+       strcpy(passwordInp, argv[2]);
 
-    FILE *fptr;
+       FILE *fptr;
 
-    if ((fptr = fopen("database/login.bin", "rb")) == NULL)
-    {
-        printf("No File Detected!");
-        exit(1);
-    }
-    
-    char acc[35];
-    fread(acc, sizeof(char), sizeof(acc), fptr);
+       if ((fptr = fopen("database/login.bin", "rb")) == NULL)
+       {
+              printf("No File Detected!");
+              exit(1);
+       }
 
-    fclose(fptr);
+       char acc[35];
+       fread(acc, sizeof(char), sizeof(acc), fptr);
 
-    char *str[3];
-    char username[30], password[30];
-    int i = 0;
-    
-    str[i] = strtok(acc, "$");
-    while (str[i++] != NULL)
-    {
-        str[i] = strtok(NULL, "$");
-    }
+       fclose(fptr);
 
-    strcpy(username, str[0]);
-    strcpy(password, str[1]);
+       char *str[3];
+       char username[30], password[30];
+       int i = 0;
 
-    if((strcmp(username, usernameInp)==0)&&(strcmp(password, passwordInp)==0)){
-        printf("Anda Berhasil Login!\n");
-    }
-    else{
-        printf("Anda Gagal Login\n");
-    }
-        
-    kelompokQuestion1();
-    if(poin==1600000){
-        printf("berhasil");
-    }
+       str[i] = strtok(acc, "$");
+       while (str[i++] != NULL)
+       {
+              str[i] = strtok(NULL, "$");
+       }
+
+       strcpy(username, str[0]);
+       strcpy(password, str[1]);
+
+       if ((strcmp(username, usernameInp) == 0) && (strcmp(password, passwordInp) == 0))
+       {
+              printf(
+                  "\t\t\t __        _______ _     ____ ___  __  __ _____   _____ ___    ____ _____  _    ____   ___  _   _ ___ ______ _            \n"
+                  "\t\t\t \\ \\      / / ____| |   / ___/ _ \\|  \\/  | ____| |_   _/ _ \\  / ___|_   _|/ \\  |  _ \\ / _ \\| | | |_ _|__  / | |    \n"
+                  "\t\t\t  \\ \\ /\\ / /|  _| | |  | |  | | | | |\\/| |  _|     | || | | | \\___ \\ | | / _ \\ | |_) | | | | | | || |  / /  | |     \n"
+                  "\t\t\t   \\ V  V / | |___| |__| |__| |_| | |  | | |___    | || |_| |  ___) || |/ ___ \\|  _ <| |_| | |_| || | / /_  |_|          \n"
+                  "\t\t\t    \\_/\\_/  |_____|_____\\____\\___/|_|  |_|_____|   |_| \\___/  |____/ |_/_/   \\_\\_| \\_\\____\\_\\___/|___/____| (_) \n\n\n\n\n\n");
+              ;
+       }
+       else
+       {
+              printf("Anda Gagal Login\n");
+       }
+
+       printf(
+           "  ___ _   _ _    ___ ___  \n"
+           " | _ \\ | | | |  | __/ __| \n"
+           " |   / |_| | |__| _|\\__ \\ \n"
+           " |_|_\\____/|____|___|___/ \n");
+
+       printf(" ______________________________________________________________________________________________________________________________________________________\n");
+       printf("|%-150s|\n", "");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+       printf("|%-150s|\n", "a");
+
+       printf("|%150s|\n", "       \\:.             .:/ ");
+       printf("|%150s|\n", "        \\``._________.''/  ");
+       printf("|%150s|\n", "         \\             /   ");
+       printf("|%150s|\n", " .--.--, / .':.   .':. \\   ");
+       printf("|%150s|\n", "/__:  /  | '::' . '::' |   ");
+       printf("|%150s|\n", "   / /   |`.   ._.   .'|   ");
+       printf("|%150s|\n", "  / /    |.'         '.|   ");
+       printf("|%150s|\n", " /___-_-,|.\\  \\   /  /.|   ");
+       printf("|%150s|\n", "      // |''\\.;   ;,/ '|   ");
+       printf("|%150s|\n", "      `==|:=         =:|   ");
+       printf("|%150s|\n", "         `.          .'    ");
+       printf("|%150s|\n", "           :-._____.-:     ");
+       printf("|%150s|\n", "          `''       `''    ");
+       printf("|______________________________________________________________________________________________________________________________________________________|\n");
+       kelompokQuestion1();
+       if (poin == 1600000)
+       {
+              kelompokQuestion2();
+       }
+
+       if (poin == 51200000)
+       {
+              kelompokQuestion3();
+       }
+
+       if (poin == 2000000000)
+       {
+              printf("Selamat Anda berhasil memperoleh hadiah utama. Pengetahuan Anda sangat luas!");
+       }
 }
-    
-    int kelompokQuestion1()
+int kelompokQuestion1()
 {
 
-    int poin = 0;
-    char jawaban;
+       int poin = 0;
+       char jawaban;
 
-    poin += 100000;
-    printf("pertanyaan ke 1\t\tpoin %d\n", poin);
-    printf("Apa warna bendera Indonesia?\n");
-    printf("A.Merah dan putih\t\tB.Biru dan kuning\nC.Hitam dan merah\t\tD.Hijau dan putih\n");
-    printf("jawaban anda : ");
-    scanf("%c", &jawaban);
-    while (getchar() != '\n');
-    if (jawaban == 'A')
-    {
-        printf("benar\t\tpoin anda %d\n\n", poin);
-        printf("pertanyaan ke 2\t\tpoin %d\n", poin *= 2);
-        printf("Berapa jumlah provinsi di Indonesia saat ini?\n");
-        printf("A.31\t\tB.30\nC.41\t\tD.38\n");
-        printf("jawaban anda : ");
-        scanf("%c", &jawaban);
-        while (getchar() != '\n');
-        if (jawaban == 'D')
-        {
-            printf("benar\t\tpoin anda %d\n\n", poin);
-            printf("pertanyaan ke 3\t\tpoin %d\n", poin *= 2);
-            printf("Apa nama pulau terbesar di Indonesia?\n");
-            printf("A.Kalimantan\t\tB.Sulawesi\nC.Sumatra\t\tD.Jawa\n");
-            printf("jawaban anda : ");
-            scanf("%c", &jawaban);
-            while (getchar() != '\n');
-            if (jawaban == 'A')
-            {
-                printf("benar\t\tpoin anda %d\n\n", poin);
-                printf("pertanyaan ke 4\t\tpoin %d\n", poin *= 2);
-                printf("Secara etimologis, demokrasi berasal dari bahasa Yunani, yaitu demos dan kratos yang artinya?\n");
-                printf("A.Kekuasaan negara\t\tB.Kekuasaan pemerintah\nC.Pemerintahan rakyat\t\tD.Pemerintahan berdaulat\n");
-                printf("jawaban anda : ");
-                scanf("%c", &jawaban);
-                while (getchar() != '\n');
-                if (jawaban == 'C')
-                {
-                    printf("benar\t\tpoin anda %d\n\n", poin);
-                    printf("pertanyaan ke 5\t\tpoin %d\n", poin *= 2);
-                     printf("Demokrasi yang diterapkan di setiap negara berbeda-beda disebabkan oleh faktor-faktor berikut, kecuali?\n");
-                    printf("A.Ideologi\t\tB.Sejarah\nC.Budaya\t\tD.Jumlah penduduk\n");
-                    printf("jawaban anda : ");
-                    scanf("%c", &jawaban);
-                    while (getchar() != '\n');
-                    if (jawaban == 'A')
-                    {
-                        printf("benar\t\tpoin anda Rp:1.600.000\n\n");
-                        *ptr = poin;
-                    }
-                    else
-                    {
-                        printf("jawaban salah");
-                    }
-                }
-                else
-                {
-                    printf("jawaban salah");
-                }
-            }
-            else
-            {
-                printf("jawaban salah");
-            }
-        }
-        else
-        {
-            printf("jawaban salah");
-        
-        }
-    }
-    else
-        {
-            printf("jawaban salah");
-        
-        }
-    return *ptr;
+       printf(" ______________________\n");
+       printf("|Hadiah Anda saat ini: |\t"
+              "Pertanyaan ke 1\n");
+       printf("|                      |\t"
+              "Apa warna bendera Indonesia?\n");
+       printf("|%-22d|\t"
+              "A.Merah dan putih\t\tB.Biru dan kuning\n",
+              poin);
+       printf("|______________________|\t"
+              "C.Hitam dan merah\t\tD.Hijau dan putih\n");
+       printf("Poin soal ini:%d\n", poin += 100000);
+       printf("jawaban anda : ");
+       scanf("%c", &jawaban);
+       while (getchar() != '\n')
+              ;
+       if (jawaban == 'A' || jawaban == 'a')
+       {
+              printf("Benar!\n\n");
+              printf(" ______________________\n");
+              printf("|Hadiah Anda saat ini: |\t"
+                     "pertanyaan ke 2\n");
+              printf("|                      |\t"
+                     "Berapa jumlah provinsi di Indonesia saat ini?\n");
+              printf("|%-22d|\t"
+                     "A.31\t\tB.30\n",
+                     poin);
+              printf("|______________________|\t"
+                     "C.41\t\tD.38\n");
+              printf("Poin soal ini:%d\n", poin *= 2);
+              printf("Jawaban anda : ");
+              scanf("%c", &jawaban);
+              while (getchar() != '\n')
+                     ;
+              if (jawaban == 'D' || jawaban == 'd')
+              {
+                     printf("Benar!\n\n");
+                     printf(" ______________________\n");
+
+                     printf("|Hadiah Anda saat ini: |\t"
+                            "pertanyaan ke 3\n");
+                     printf("|                      |\t"
+                            "Apa nama pulau terbesar di Indonesia?\n");
+                     printf("|%-22d|\t"
+                            "A.Kalimantan\t\tB.Sulawesi\n",
+                            poin);
+                     printf("|______________________|\t"
+                            "C.Sumatra\t\tD.Jawa\n");
+                     printf("Poin soal ini:%d\n", poin *= 2);
+                     printf("jawaban anda : ");
+                     scanf("%c", &jawaban);
+                     while (getchar() != '\n')
+                            ;
+                     if (jawaban == 'A' || jawaban == 'a')
+                     {
+                            printf("Benar!\n\n");
+                            printf(" ______________________\n");
+                            printf("|Hadiah Anda saat ini: |\t"
+                                   "pertanyaan ke 4\n");
+                            printf("|                      |\t"
+                                   "Secara etimologis, demokrasi berasal dari bahasa Yunani, yaitu demos dan kratos yang artinya?\n");
+                            printf("|%-22d|\t"
+                                   "A.Kekuasaan negara\t\tB.Kekuasaan pemerintah\n",
+                                   poin);
+                            printf("|______________________|\t"
+                                   "C.Pemerintahan rakyat\t\tD.Pemerintahan berdaulat\n");
+                            printf("Poin soal ini:%d\n", poin *= 2);
+                            printf("jawaban anda : ");
+                            scanf("%c", &jawaban);
+                            while (getchar() != '\n')
+                                   ;
+                            if (jawaban == 'C' || jawaban == 'c')
+                            {
+                                   printf("Benar!\n\n");
+                                   printf(" ______________________\n");
+                                   printf("|Hadiah Anda saat ini: |\t"
+                                          "pertanyaan ke 5\n");
+                                   printf("|                      |\t"
+                                          "Demokrasi yang diterapkan di setiap negara berbeda-beda disebabkan oleh faktor-faktor berikut, kecuali?\n");
+                                   printf("|%-22d|\t"
+                                          "A.Ideologi\t\tB.Sejarah\n",
+                                          poin);
+                                   printf("|______________________|\t"
+                                          "C.Budaya\t\tD.Jumlah penduduk\n");
+                                   printf("Poin soal ini:%d\n", poin *= 2);
+                                   printf("jawaban anda : ");
+                                   scanf("%c", &jawaban);
+                                   while (getchar() != '\n')
+                                          ;
+                                   if (jawaban == 'A' || jawaban == 'a')
+                                   {
+                                          printf("Benar!\n\n");
+                                          *ptr = poin;
+                                   }
+                                   else
+                                   {
+                                          printf("jawaban salah");
+                                   }
+                            }
+                            else
+                            {
+                                   printf("jawaban salah");
+                            }
+                     }
+                     else
+                     {
+                            printf("jawaban salah");
+                     }
+              }
+              else
+              {
+                     printf("jawaban salah");
+              }
+       }
+       else
+       {
+              printf("jawaban salah");
+       }
+       return *ptr;
 }
-        
+
 int kelompokQuestion2()
 {
-
-    int poin = 0;
-    char jawaban;
-
-    poin += 1600000;
-    printf("pertanyaan ke 6\t\tpoin %d\n", poin);
-    printf("Di benua mana negara Rusia terletak?\n");
-    printf("A.Australia\t\tB.Amerika\nC.Afrika\t\tD.Eropa\n");
-    printf("jawaban anda : ");
-    scanf("%c", &jawaban);
-    while (getchar() != '\n')
-        ;
-    if (jawaban == 'D' || jawaban == 'd')
-    {
-        printf("benar\t\tpoin anda %d\n\n", poin);
-        printf("pertanyaan ke 7\t\tpoin %d\n", poin *= 2);
-        printf("Berapa jumlah provinsi di Indonesia saat ini?\n");
-        printf("A.31\t\tB.30\nC.41\t\tD.38\n");
-        printf("jawaban anda : ");
-        scanf("%c", &jawaban);
-        while (getchar() != '\n')
-            ;
-        if (jawaban == 'D')
-        {
-            printf("benar\t\tpoin anda %d\n\n", poin);
-            printf("pertanyaan ke 8\t\tpoin %d\n", poin *= 2);
-            printf("Siapakah presiden pertama Amerika Serikat?\n");
-            printf("A.George Washington\t\tB.Thomas Jefferson\nC.John F. Kennedy\t\tD.Abraham Lincoln\n");
-            printf("jawaban anda : ");
-            scanf("%c", &jawaban);
-            while (getchar() != '\n')
-                ;
-            if (jawaban == 'A' || jawaban == 'a')
-            {
-                printf("benar\t\tpoin anda %d\n\n", poin);
-                printf("pertanyaan ke 9\t\tpoin %d\n", poin *= 2);
-                printf("Apa nama ibukota Australia?\n");
-                printf("A.Sydney\t\tB.Canberra\nC.Melbourne\t\tD.Brisbane\n");
-                printf("jawaban anda : ");
-                scanf("%c", &jawaban);
-                while (getchar() != '\n')
-                    ;
-                if (jawaban == 'B' || jawaban == 'b')
-                {
-                    printf("benar\t\tpoin anda %d\n\n", poin);
-                    printf("pertanyaan ke 10\t\tpoin %d\n", poin *= 2);
-                    printf("Siapakah pelukis terkenal yang melukis Mona Lisa?\n");
-                    printf("A.Vincent van Gogh\t\tB.Leonardo da Vinci\nC.Pablo Picasso\t\tD.Michelangelo\n");
-                    printf("jawaban anda : ");
-                    scanf("%c", &jawaban);
-                    while (getchar() != '\n')
-                        ;
-                    if (jawaban == 'B' || jawaban == 'b')
-                    {
-                        printf("benar\t\tpoin anda Rp:1.600.000\n\n");
-                        *ptr = poin;
-                    }
-                    else
-                    {
-                        printf("jawaban salah");
-                    }
-                }
-                else
-                {
-                    printf("jawaban salah");
-                }
-            }
-            else
-            {
-                printf("jawaban salah");
-            }
-        }
-        else
-        {
-            printf("jawaban salah");
-        }
-    }
-    else
-    {
-        printf("jawaban salah");
-    }
-    return *ptr;
-} 
+       char jawaban;
+       printf(" ______________________\n");
+       printf("|Hadiah Anda saat ini: |\t"
+              "pertanyaan ke 6\n");
+       printf("|                      |\t"
+              "Di benua mana negara Rusia terletak?\n");
+       printf("|%-22d|\t"
+              "A.Australia\t\tB.Amerika\n",
+              poin);
+       printf("|______________________|\t"
+              "C.Afrika\t\tD.Eropa\n");
+       printf("Poin soal ini:%d\n", poin *= 2);
+       printf("jawaban anda : ");
+       scanf("%c", &jawaban);
+       while (getchar() != '\n')
+              ;
+       if (jawaban == 'D' || jawaban == 'd')
+       {
+              printf("Benar!\n\n");
+              printf(" ______________________\n");
+              printf("|Hadiah Anda saat ini: |\t"
+                     "pertanyaan ke 7\n");
+              printf("|                      |\t"
+                     "Berapa jumlah provinsi di Indonesia saat ini?\n");
+              printf("|%-22d|\t"
+                     "A.31\t\tB.30\n",
+                     poin);
+              printf("|______________________|\t"
+                     "C.41\t\tD.38\n");
+              printf("Poin soal ini:%d\n", poin *= 2);
+              printf("jawaban anda : ");
+              scanf("%c", &jawaban);
+              while (getchar() != '\n')
+                     ;
+              if (jawaban == 'D')
+              {
+                     printf("Benar!\n\n");
+                     printf(" ______________________\n");
+                     printf("|Hadiah Anda saat ini: |\t"
+                            "pertanyaan ke 8\n");
+                     printf("|                      |\t"
+                            "Siapakah presiden pertama Amerika Serikat?\n");
+                     printf("|%-22d|\t"
+                            "A.George Washington\t\tB.Thomas Jefferson\n",
+                            poin);
+                     printf("|______________________|\t"
+                            "C.John F. Kennedy\t\tD.Abraham Lincoln\n");
+                     printf("Poin soal ini:%d\n", poin *= 2);
+                     printf("jawaban anda : ");
+                     scanf("%c", &jawaban);
+                     while (getchar() != '\n')
+                            ;
+                     if (jawaban == 'A' || jawaban == 'a')
+                     {
+                            printf("Benar!\n\n");
+                            printf(" ______________________\n");
+                            printf("|Hadiah Anda saat ini: |\t"
+                                   "pertanyaan ke 9\n");
+                            printf("|                      |\t"
+                                   "Apa nama ibukota Australia?\n");
+                            printf("|%-22d|\t"
+                                   "A.Sydney\t\tB.Canberra\n",
+                                   poin);
+                            printf("|______________________|\t"
+                                   "C.Melbourne\t\tD.Brisbane\n");
+                            printf("Poin soal ini:%d\n", poin *= 2);
+                            printf("jawaban anda : ");
+                            scanf("%c", &jawaban);
+                            while (getchar() != '\n')
+                                   ;
+                            if (jawaban == 'B' || jawaban == 'b')
+                            {
+                                   printf("Benar!\n\n");
+                                   printf(" ______________________\n");
+                                   printf("|Hadiah Anda saat ini: |\t"
+                                          "pertanyaan ke 10\n");
+                                   printf("|                      |\t"
+                                          "Siapakah pelukis terkenal yang melukis Mona Lisa?\n");
+                                   printf("|%-22d|\t"
+                                          "A.Vincent van Gogh\t\tB.Leonardo da Vinci\n",
+                                          poin);
+                                   printf("|______________________|\t"
+                                          "C.Pablo Picasso\t\t\tD.Michelangelo\n");
+                                   printf("Poin soal ini:%d\n", poin *= 2);
+                                   printf("jawaban anda : ");
+                                   scanf("%c", &jawaban);
+                                   while (getchar() != '\n')
+                                          ;
+                                   if (jawaban == 'B' || jawaban == 'b')
+                                   {
+                                          printf("Benar!\n\n");
+                                          *ptr = poin;
+                                   }
+                                   else
+                                   {
+                                          printf("jawaban salah");
+                                   }
+                            }
+                            else
+                            {
+                                   printf("jawaban salah");
+                            }
+                     }
+                     else
+                     {
+                            printf("jawaban salah");
+                     }
+              }
+              else
+              {
+                     printf("jawaban salah");
+              }
+       }
+       else
+       {
+              printf("jawaban salah");
+       }
+       return *ptr;
+}
 
 int kelompokQuestion3()
 {
 
-    
-    char jawaban;
-
-    
-    printf("pertanyaan ke 11\t\tpoin %d\n", poin);
-    printf("Siapakah penemu telepon?\n");
-    printf("A.Thomas Edison\t\tB.Alexander Graham Bell\nC.Nikola Tesla\t\tD.Albert Einstein\n");
-    printf("jawaban anda : ");
-    scanf("%c", &jawaban);
-    while (getchar() != '\n')
-        ;
-    if (jawaban == 'B' || jawaban == 'b')
-    {
-        printf("benar\t\tpoin anda %d\n\n", poin);
-        printf("pertanyaan ke 12\t\tpoin %d\n", poin *= 2);
-        printf("Siapakah penulis buku Harry Potter?\n");
-        printf("A.Stephen King\t\tB.George R.R. Martin\nC.Suzanne Collins\t\tD.J.K. Rowling\n");
-        printf("jawaban anda : ");
-        scanf("%c", &jawaban);
-        while (getchar() != '\n')
-            ;
-        if (jawaban == 'D' || jawaban == 'd')
-        {
-            printf("benar\t\tpoin anda %d\n\n", poin);
-            printf("pertanyaan ke 13\t\tpoin %d\n", poin *= 2);
-            printf("Apa nama negara terkecil di dunia?\n");
-            printf("A.San Marino\t\tB.Andorra\nC.Vatikan\t\tD.Liechtenstein\n");
-            printf("jawaban anda : ");
-            scanf("%c", &jawaban);
-            while (getchar() != '\n')
-                ;
-            if (jawaban == 'C' || jawaban == 'c')
-            {
-                printf("benar\t\tpoin anda %d\n\n", poin);
-                printf("pertanyaan ke 14\t\tpoin %d\n", poin *= 2);
-                printf("Apa nama sungai yang melintasi kota Paris?\n");
-                printf("A.Sungai Seine\t\tB.Sungai Thames\nC.Sungai Rhine\t\tD.Sungai Danube\n");
-                printf("jawaban anda : ");
-                scanf("%c", &jawaban);
-                while (getchar() != '\n')
-                    ;
-                if (jawaban == 'A' || jawaban == 'a')
-                {
-                    printf("benar\t\tpoin anda %d\n\n", poin);
-                    printf("pertanyaan ke 15\t\tpoin %d\n", poin *= 2);
-                    printf("Siapakah pelopor revolusi industri?\n");
-                    printf("A.Henry Ford\t\tB.Alexander Graham Bell\nC.Thomas Edison\t\tD.James Watt\n");
-                    printf("jawaban anda : ");
-                    scanf("%c", &jawaban);
-                    while (getchar() != '\n')
-                        ;
-                    if (jawaban == 'D' || jawaban == 'd')
-                    {
-                        printf("benar\t\tpoin anda %d", p\n\n);
-                        *ptr = poin;
-                    }
+       char jawaban;
+       printf(" ______________________\n");
+       printf("|Hadiah Anda saat ini: |\t"
+              "pertanyaan ke 11\n");
+       printf("|                      |\t"
+              "Siapakah penemu telepon?\n");
+       printf("|%-22d|\t"
+              "A.Thomas Edison\t\tB.Alexander Graham Bell\n",
+              poin);
+       printf("|______________________|\t"
+              "C.Nikola Tesla\t\tD.Albert Einstein\n");
+       printf("Poin soal ini:%d\n", poin *= 2);
+       printf("jawaban anda : ");
+       scanf("%c", &jawaban);
+       while (getchar() != '\n')
+              ;
+       if (jawaban == 'B' || jawaban == 'b')
+       {
+              printf("Benar!\n\n");
+              printf(" ______________________\n");
+              printf("|Hadiah Anda saat ini: |\t"
+                     "pertanyaan ke 12\n");
+              printf("|                      |\t"
+                     "Siapakah penulis buku Harry Potter?\n");
+              printf("|%-22d|\t"
+                     "A.Stephen King\t\tB.George R.R. Martin\n",
+                     poin);
+              printf("|______________________|\t"
+                     "C.Suzanne Collins\t\tD.J.K. Rowling\n");
+              printf("Poin soal ini:%d\n", poin *= 2);
+              printf("jawaban anda : ");
+              scanf("%c", &jawaban);
+              while (getchar() != '\n')
+                     ;
+              if (jawaban == 'D' || jawaban == 'd')
+              {
+                     printf("Benar!\n\n");
+                     printf(" ______________________\n");
+                     printf("|Hadiah Anda saat ini: |\t"
+                            "pertanyaan ke 13\n");
+                     printf("|______________________|\t"
+                            "Apa nama negara terkecil di dunia?\n");
+                     printf("|%-22d|\t"
+                            "A.San Marino\t\tB.Andorra\n",
+                            poin);
+                     printf("|______________________|\t"
+                            "C.Vatikan\t\tD.Liechtenstein\n");
+                     printf("Poin soal ini:%d\n", poin *= 2);
+                     printf("jawaban anda : ");
+                     scanf("%c", &jawaban);
+                     while (getchar() != '\n')
+                            ;
+                     if (jawaban == 'C' || jawaban == 'c')
+                     {
+                            printf("Benar!\n\n");
+                            printf(" ______________________\n");
+                            printf("|Hadiah Anda saat ini: |\t"
+                                   "pertanyaan ke 14\n");
+                            printf("|______________________|\t"
+                                   "Apa nama sungai yang melintasi kota Paris?\n");
+                            printf("|%-22d|\t"
+                                   "A.Sungai Seine\t\tB.Sungai Thames\n",
+                                   poin);
+                            printf("|______________________|\t"
+                                   "C.Sungai Rhine\t\tD.Sungai Danube\n");
+                            printf("Poin soal ini:%d\n", poin *= 2);
+                            printf("jawaban anda : ");
+                            scanf("%c", &jawaban);
+                            while (getchar() != '\n')
+                                   ;
+                            if (jawaban == 'A' || jawaban == 'a')
+                            {
+                                   printf("Benar!\n\n");
+                                   printf(" ______________________\n");
+                                   printf("|Hadiah Anda saat ini: |\t"
+                                          "pertanyaan ke 15\n");
+                                   printf("|______________________|\t"
+                                          "Siapakah pelopor revolusi industri?\n");
+                                   printf("|%-22d|\t"
+                                          "A.Henry Ford\t\tB.Alexander Graham Bell\n",
+                                          poin);
+                                   printf("|______________________|\t"
+                                          "C.Thomas Edison\t\tD.James Watt\n");
+                                   printf("Poin soal ini:%d\n", poin *= 2);
+                                   printf("jawaban anda : ");
+                                   scanf("%c", &jawaban);
+                                   while (getchar() != '\n')
+                                          ;
+                                   poin += 361600000;
+                                   if (jawaban == 'D' || jawaban == 'd')
+                                   {
+                                          printf("benar\t\tpoin anda %d\n", poin);
+                                          *ptr = poin;
+                                   }
+                                   else
+                                   {
+                                          printf("jawaban salah");
+                                   }
+                            }
+                            else
+                            {
+                                   printf("jawaban salah");
+                            }
+                     }
+                     else
+                     {
+                            printf("jawaban salah");
+                     }
+              }
+              else
+              {
+                     printf("jawaban salah");
+              }
+       }
+       else
+       {
+              printf("jawaban salah");
+       }
+       return *ptr;
+}
