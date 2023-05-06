@@ -116,7 +116,8 @@ int main(int argc, char const *argv[])
        }
        else
        {
-              printf("Anda Gagal Login\n");
+              printf("Anda Gagal Login\nHarap masukan username dan password yang sesuai");
+       }
        }
 }
 int kelompokQuestion1()
