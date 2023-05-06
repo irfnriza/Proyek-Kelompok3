@@ -69,25 +69,15 @@ int main(int argc, char const *argv[])
 
        printf(" ______________________________________________________________________________________________________________________________________________________\n");
        printf("|%-150s|\n", "");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
-       printf("|%-150s|\n", "a");
+       printf("|%-144s|\n", "\tBerikut ini adalah beberapa peraturan permainan: ");
+       printf("|%-144s|\n", "\t1. Permainan akan dibagi menjadi 3 ronde yang mana di setiap ronde terdapat 5 pertanyaan");
+       printf("|%-144s|\n", "\t2. Masing-masing pertanyaan memiliki hadiah yang dapat diperoleh jika pertanyaan dijawab dengan benar");
+       printf("|%-144s|\n", "\t3. Jika berhasil menjawab 5 pertanyaan dengan benar, maka hadiah dari 5 pertanyaan tersebut akan disimpan dan masuk ke ronde");
+       printf("|%-144s|\n", "\t   berikutnya");
+       printf("|%-144s|\n", "\t4. Hadiah akan hangus dan tidak dapat melanjutkan permainan jika salah menjawab satu pertanyaan di dalam satu ronde");
+       printf("|%-144s|\n", "\t5. Hadiah dari ronde sebelumnya dapat diperoleh jika terhenti di ronde selanjutnya");
+       printf("|%-144s|\n", "\t6. Jika berhasil menjawab semua pertanyaan dari tiap ronde dengan benar, maka akan memperoleh hadiah utama");
+       printf("|%-144s|\n", "\t7. Hadiah utama adalah jumlah hadiah dari seluruh pertanyaan yang telah dijawab dengan benar");
 
        printf("|%150s|\n", "       \\:.             .:/ ");
        printf("|%150s|\n", "        \\``._________.''/  ");
@@ -281,7 +271,7 @@ int kelompokQuestion2()
               scanf("%c", &jawaban);
               while (getchar() != '\n')
                      ;
-              if (jawaban == 'D')
+              if (jawaban == 'D' || jawaban == 'd')
               {
                      printf("Benar!\n\n");
                      printf(" ______________________\n");
@@ -398,7 +388,7 @@ int kelompokQuestion3()
                      "A.Stephen King\t\tB.George R.R. Martin\n",
                      poin);
               printf("|______________________|\t"
-                     "C.Suzanne Collins\t\tD.J.K. Rowling\n");
+                     "C.Suzanne Collins\tD.J.K. Rowling\n");
               printf("Poin soal ini:%d\n", poin *= 2);
               printf("jawaban anda : ");
               scanf("%c", &jawaban);
