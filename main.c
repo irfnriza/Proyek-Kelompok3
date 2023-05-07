@@ -11,6 +11,18 @@ int *ptr = &poin;
 // Command Line Argument
 int main(int argc, char const *argv[])
 {
+    //jika argumen cuma satu, pemain akan diminta untuk registrasi username dan password
+       char login[20];
+    if (argc == 1){
+    FILE *fptr = fopen("database/login.bin", "wb");
+    printf("\t\t\tRegistrasi akun\n");
+    printf("Masukkan username dan password sesuai dengan format berikut!\n");
+    printf("username$password : ");
+    scanf("%s", &login);
+    fwrite(&login, sizeof(login),1, fptr);
+    printf("Cara Login: ./FileAppProram username password");
+    fclose(fptr);
+       }
     // memastikan argumen yang diinput sesuai ketentuan
     if (argc != 3)
     {
@@ -116,7 +128,7 @@ int main(int argc, char const *argv[])
 
                 if (poin == 51200000)
                 {
-                    printf("Selamat, Anda memasuki ronde kedua. Akumulasi hadiah Anda telah disimpan.\nBerikut pertanyaan ronde kedua:\n\n");
+                    printf("Selamat, Anda memasuki ronde ketiga. Akumulasi hadiah Anda telah disimpan.\nBerikut pertanyaan ronde ketiga:\n\n");
                     kelompokQuestion3();
 
                     if (poin == 2000000000)
