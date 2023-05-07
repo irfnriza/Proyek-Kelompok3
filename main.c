@@ -170,7 +170,8 @@ int kelompokQuestion1()
 
     int poin = 0;
     char jawaban;
-
+    
+    // Menampilkan teks pertanyaan dan pilihan jawaban ke layar
     printf(" ______________________\n");
     printf("|Hadiah Anda saat ini: |\t"
            "Pertanyaan ke 1\n");
@@ -181,11 +182,19 @@ int kelompokQuestion1()
            poin);
     printf("|______________________|\t"
            "C.Hitam dan merah\t\tD.Hijau dan putih\n");
+    
+    // Memberikan jumlah poin yang dimiliki oleh pemain
     printf("Poin soal ini:%d\n", poin += 100000);
+    
+    // Meminta pemain untuk memasukkan jawaban dengan menggunakan fungsi scanf()
     printf("jawaban anda : ");
     scanf("%c", &jawaban);
+    
+    // Membersihkan input buffer setelah meminta input dari pemain
     while (getchar() != '\n')
         ;
+    
+    // Memproses jawaban yang dimasukkan oleh pemain dengan menggunakan statement if
     if (jawaban == 'A' || jawaban == 'a')
     {
         printf("Benar!\n\n");
@@ -472,9 +481,9 @@ int kelompokQuestion3()
             {
                 printf("Benar!\n\n");
 
-                printf("Sekarang Anda masuk ke babak terakhir yang memaksa Anda mempertaruhkan semuanya. Dua pertanyaan terakhir dapat Anda jawab untuk memperoleh hadiah utama. NAmun, Anda juga dapat berhenti di sini.\n");
-                printf("PERINGATAN: Apabila Anda gagal menjawab satu darai dua pertanyaan terakhir, maka smua hadiah Anda akan hangus.");
-                printf("Apakah Anda ingin lanjut demi kesempatan mendapat hadiah utama?\n1. Lanjut apa pun yang terjadi\n2. Saya pikir sudah cukup. Saya berhenti saja.\n");
+                printf("Sekarang anda masuk ke babak terakhir yang memaksa anda mempertaruhkan semuanya. Dua pertanyaan terakhir dapat anda jawab untuk memperoleh hadiah utama. Namun, anda juga dapat berhenti di sini.\n");
+                printf("PERINGATAN: Apabila anda gagal menjawab satu dari dua pertanyaan terakhir, maka semua hadiah anda akan hangus.");
+                printf("Apakah anda ingin lanjut demi kesempatan mendapat hadiah utama?\n1. Lanjut apa pun yang terjadi\n2. Saya pikir sudah cukup. Saya berhenti saja.\n");
                 printf("Jawaban Anda: ");
                 scanf("%d", &check);
                 while (getchar() != '\n')
