@@ -8,116 +8,159 @@ int kelompokQuestion3();
 int poin;
 int *ptr = &poin;
 
-    // Command Line Argument
+// Command Line Argument
 int main(int argc, char const *argv[])
 {
-    // memastikan argumen yang diinput sesuai ketentuan
+       // memastikan argumen yang diinput sesuai ketentuan
        if (argc != 3)
        {
               printf("Login Gagal!\n");
               printf("Cara Login: ./FileAppProram username password");
        }
-    // deklarasikan variabel baru untuk menampung argumen yang diinput
+       // deklarasikan variabel baru untuk menampung argumen yang diinput
        char usernameInp[30], passwordInp[30];
-       
-    // digunakan strcpy() untuk meng-copy string dari satu variabel ke variabel lain
+
+       // digunakan strcpy() untuk meng-copy string dari satu variabel ke variabel lain
        strcpy(usernameInp, argv[1]);
        strcpy(passwordInp, argv[2]);
 
        FILE *fptr;
-    // buka file login.bin
-    // gunakan mode 'rb' untuk read binary
+       // buka file login.bin
+       // gunakan mode 'rb' untuk read binary
        if ((fptr = fopen("database/login.bin", "rb")) == NULL)
        {
               printf("No File Detected!");
-    // program akan keluar jika file tidak ditemukan
+              // program akan keluar jika file tidak ditemukan
               exit(1);
        }
-    // deklarasikan variabel acc untuk menyimpan isi dari file login.bin
+       // deklarasikan variabel acc untuk menyimpan isi dari file login.bin
        char acc[35];
        fread(acc, sizeof(char), sizeof(acc), fptr);
-       
-    // file fptr ditutup
+
+       // file fptr ditutup
        fclose(fptr);
-       
-    // deklarasikan variabel baru untuk menampung sementara hasil pemisahan dari variabel acc
+
+       // deklarasikan variabel baru untuk menampung sementara hasil pemisahan dari variabel acc
        char *str[3];
        char username[30], password[30];
        int i = 0;
-       
-    // Digunakan strtok untuk memisahkan string dari karakter (huruf) tertentu
+
+       // Digunakan strtok untuk memisahkan string dari karakter (huruf) tertentu
        str[i] = strtok(acc, "$");
        while (str[i++] != NULL)
        {
               str[i] = strtok(NULL, "$");
        }
-       
-    // hasil pemisahan disimpan ke dalam variabel str[0] dan str[1]
-    // Digunakan strcpy() untuk meng-copy string dari satu variabel ke variabel lain
+
+       // hasil pemisahan disimpan ke dalam variabel str[0] dan str[1]
+       // Digunakan strcpy() untuk meng-copy string dari satu variabel ke variabel lain
        strcpy(username, str[0]);
        strcpy(password, str[1]);
 
-    // Gunakan strcmp() untuk membandingkan string dengan string yang lainnya
+       // Gunakan strcmp() untuk membandingkan string dengan string yang lainnya
        if ((strcmp(username, usernameInp) == 0) && (strcmp(password, passwordInp) == 0))
        {
-    // jika login berhasil, maka akan langsung masuk ke dalam permainan
+              // jika login berhasil, maka akan langsung masuk ke dalam permainan
               printf(
                   "\t\t\t __        _______ _     ____ ___  __  __ _____   _____ ___    ____ _____  _    ____   ___  _   _ ___ ______ _            \n"
                   "\t\t\t \\ \\      / / ____| |   / ___/ _ \\|  \\/  | ____| |_   _/ _ \\  / ___|_   _|/ \\  |  _ \\ / _ \\| | | |_ _|__  / | |    \n"
                   "\t\t\t  \\ \\ /\\ / /|  _| | |  | |  | | | | |\\/| |  _|     | || | | | \\___ \\ | | / _ \\ | |_) | | | | | | || |  / /  | |     \n"
                   "\t\t\t   \\ V  V / | |___| |__| |__| |_| | |  | | |___    | || |_| |  ___) || |/ ___ \\|  _ <| |_| | |_| || | / /_  |_|          \n"
                   "\t\t\t    \\_/\\_/  |_____|_____\\____\\___/|_|  |_|_____|   |_| \\___/  |____/ |_/_/   \\_\\_| \\_\\____\\_\\___/|___/____| (_) \n\n\n\n\n\n");
-       printf(
-           "  ___ _   _ _    ___ ___  \n"
-           " | _ \\ | | | |  | __/ __| \n"
-           " |   / |_| | |__| _|\\__ \\ \n"
-           " |_|_\\____/|____|___|___/ \n");
+              printf(
+                  "  ___ _   _ _    ___ ___  \n"
+                  " | _ \\ | | | |  | __/ __| \n"
+                  " |   / |_| | |__| _|\\__ \\ \n"
+                  " |_|_\\____/|____|___|___/ \n");
 
-       printf(" ______________________________________________________________________________________________________________________________________________________\n");
-       printf("|%-150s|\n", "");
-       printf("|%-144s|\n", "\tBerikut ini adalah beberapa peraturan permainan: ");
-       printf("|%-144s|\n", "\t1. Permainan akan dibagi menjadi 3 ronde yang mana di setiap ronde terdapat 5 pertanyaan");
-       printf("|%-144s|\n", "\t2. Masing-masing pertanyaan memiliki hadiah yang dapat diperoleh jika pertanyaan dijawab dengan benar");
-       printf("|%-144s|\n", "\t3. Jika berhasil menjawab 5 pertanyaan dengan benar, maka hadiah dari 5 pertanyaan tersebut akan disimpan dan masuk ke ronde");
-       printf("|%-144s|\n", "\t   berikutnya");
-       printf("|%-144s|\n", "\t4. Hadiah akan hangus dan tidak dapat melanjutkan permainan jika salah menjawab satu pertanyaan di dalam satu ronde");
-       printf("|%-144s|\n", "\t5. Hadiah dari ronde sebelumnya dapat diperoleh jika terhenti di ronde selanjutnya");
-       printf("|%-144s|\n", "\t6. Jika berhasil menjawab semua pertanyaan dari tiap ronde dengan benar, maka akan memperoleh hadiah utama");
-       printf("|%-144s|\n", "\t7. Hadiah utama adalah jumlah hadiah dari seluruh pertanyaan yang telah dijawab dengan benar");
+              printf(" ______________________________________________________________________________________________________________________________________________________\n");
+              printf("|%-150s|\n", "");
+              printf("|%-144s|\n", "\tBerikut ini adalah beberapa peraturan permainan: ");
+              printf("|%-144s|\n", "\t1. Permainan akan dibagi menjadi 3 ronde. Dalam etiap ronde terdapat 5 pertanyaan.");
+              printf("|%-144s|\n", "\t2. Masing-masing pertanyaan memiliki hadiah yang dapat diperoleh jika pertanyaan dijawab dengan benar.");
+              printf("|%-144s|\n", "\t3. Jika berhasil menjawab 5 pertanyaan dengan benar, maka hadiah dari 5 pertanyaan tersebut akan disimpan dan pemain masuk ke ronde");
+              printf("|%-144s|\n", "\t   berikutnya.");
+              printf("|%-144s|\n", "\t4. Hadiah akan hangus dan tidak dapat melanjutkan permainan jika salah menjawab satu pertanyaan di dalam ronde pertama.");
+              printf("|%-144s|\n", "\t5. Hadiah dari ronde sebelumnya dapat diperoleh jika pemain gagal menjawab salah satu pertanyaan di ronde berikutnya.");
+              printf("|%-144s|\n", "\t6. Jika berhasil menjawab semua pertanyaan dari tiap ronde dengan benar, maka akan memperoleh hadiah utama.");
+              printf("|%-144s|\n", "\t7. Hadiah utama adalah akumulasi hadiah dari seluruh pertanyaan yang telah dijawab dengan benar yang ditambah bonus sehingga");
+              printf("|%-144s|\n", "\t   totalnya adalah 2.000.000.000 rupiah.");
+              printf("|%-144s|\n", "\t8. Baiklah, selamat try hard ^.^");
+              printf("|%150s|\n", "       \\:.             .:/ ");
+              printf("|%150s|\n", "        \\``._________.''/  ");
+              printf("|%150s|\n", "         \\             /   ");
+              printf("|%150s|\n", " .--.--, / .':.   .':. \\   ");
+              printf("|%150s|\n", "/__:  /  | '::' . '::' |   ");
+              printf("|%150s|\n", "   / /   |`.   ._.   .'|   ");
+              printf("|%150s|\n", "  / /    |.'         '.|   ");
+              printf("|%150s|\n", " /___-_-,|.\\  \\   /  /.|   ");
+              printf("|%150s|\n", "      // |''\\.;   ;,/ '|   ");
+              printf("|%150s|\n", "      `==|:=         =:|   ");
+              printf("|%150s|\n", "         `.          .'    ");
+              printf("|%150s|\n", "           :-._____.-:     ");
+              printf("|%150s|\n", "          `''       `''    ");
+              printf("|______________________________________________________________________________________________________________________________________________________|\n\n\n");
+              int check;
+              printf("Harap baca semua aturan yang tertera karena kami sudah susah payah mengetiknya.\nKAlau sudah, apakah Anda siap untuk lanjut ke pertanyaan?\n1. 1000 persen siap!\n2. Em .. gajadi deh.\njawaban Anda: ");
+              scanf("%d", &check);
+              while (getchar() != '\n')
+                     ;
+              if (check == 1)
+              {
+                     kelompokQuestion1();
 
-       printf("|%150s|\n", "       \\:.             .:/ ");
-       printf("|%150s|\n", "        \\``._________.''/  ");
-       printf("|%150s|\n", "         \\             /   ");
-       printf("|%150s|\n", " .--.--, / .':.   .':. \\   ");
-       printf("|%150s|\n", "/__:  /  | '::' . '::' |   ");
-       printf("|%150s|\n", "   / /   |`.   ._.   .'|   ");
-       printf("|%150s|\n", "  / /    |.'         '.|   ");
-       printf("|%150s|\n", " /___-_-,|.\\  \\   /  /.|   ");
-       printf("|%150s|\n", "      // |''\\.;   ;,/ '|   ");
-       printf("|%150s|\n", "      `==|:=         =:|   ");
-       printf("|%150s|\n", "         `.          .'    ");
-       printf("|%150s|\n", "           :-._____.-:     ");
-       printf("|%150s|\n", "          `''       `''    ");
-       printf("|______________________________________________________________________________________________________________________________________________________|\n");
-       kelompokQuestion1();
-       if (poin == 1600000)
-       {
-              kelompokQuestion2();
-       }
+                     if (poin == 1600000)
+                     {
+                            printf("Selamat, Anda memasuki ronde kedua. Akumulasi hadiah Anda telah disimpan.\nBerikut pertanyaan ronde kedua:\n\n");
+                            kelompokQuestion2();
 
-       if (poin == 51200000)
-       {
-              kelompokQuestion3();
-       }
+                            if (poin == 51200000)
+                            {
+                                   printf("Selamat, Anda memasuki ronde kedua. Akumulasi hadiah Anda telah disimpan.\nBerikut pertanyaan ronde kedua:\n\n");
+                                   kelompokQuestion3();
 
-       if (poin == 2000000000)
-       {
-              printf("Selamat Anda berhasil memperoleh hadiah utama. Pengetahuan Anda sangat luas!");
+                                   if (poin == 2000000000)
+                                   {
+                                          printf("Jeng ... jeng ... jeng!\nSELAMAT! Anda berhasil menjawab semua pertanyaan dengan benar. Wawasan Anda tidak perlu diragukan lagi. Atas kegigihan dan usaha Anda, berikut hadiah utama senilai Rp2.000.000.000,00 kami berikan kepada Anda (jangan lupa pajak :D)\n.");
+                                   }
+                                   else if(poin == 409600000){
+                                   printf("Pengetahuan Anda sangat luas, tetapi mengorbankan segalanya demi keserakahan bukan cara Anda. keputusan Anda sngat baik dan kami mengapresiasinya. Anda berhak membawa pulang hadiah senilai 409.600.000 rupiah.\n");      
+                                   }
+                                   else if(poin > 409600000 && poin < 2000000000){
+                                          printf("Terkadang keberanian dapat membawa keberuntungan. Tetapi kali ini dewi fortuna tidak memihak pada Anda.\nMohon maaf dengan berat hari kami menyatakan bahwa Anda telah gagal dan tidak akan menerima hadiah apa pun.\n");
+                                          printf("Perjalanan panjang membawa kita pada keputusan sulit. Siapalah kita yang berani menantang takdir hidup yang seperti roller coaster. jangan menangis, tetaplah gembira. Namun, jangan pernah semangat dan tetaplah menyerah karena Anda baru saja kehilangan kesempatan menjadi jutawan.\n");
+                                   }
+                                   else
+                                   {
+                                          printf("Anda orang yang berpengetahuan luas. Mungkin kali ini Anda hanya kurang beruntung saja (^^)\n Eitss...tapi jangan khawatir! Atas kegigihan Anda,Anda berhak membawa pulang hadiah hadiah senilai Rp.51.200.000,00\n");
+                                   }
+                            }
+                            else
+                            {
+                                   printf("Anda orang yang berpengetahuan luas. Mungkin kali ini Anda hanya kurang beruntung saja (^^)\nEitss...tapi jaangan khawatir! Atas kegigihan Anda,Anda berhak membawa pulang hadiah hadiah senilai Rp.1.600.000,00\n");
+                            }
+                     }
+                     else
+                     {
+                            printf("Hadiah Anda 0 rupiah T.T\n");
+                     }
+              }
+              else
+              {
+                     printf("Siapa yang menyangka ternyata Anda begitu pengecut! padahal hadiah sudah di depan mata. Huh, sudahlah kami kecewa.\n");
+              }
+              if (poin > 1600000 && poin  <= 409600000 && poin ==2000000000)
+              {
+                     printf("Cara mengambil hadiah akan kami infokan melalui email masing-masing.\n");
+              }
+              printf("\t\t\t _____        _              _  __        _ _      ___         _      _      ___                     _ \n"      
+                     "\t\t\t|_   _|__ _ _(_)_ __  __ _  | |/ /__ _ __(_) |_   / __|_  _ __| |__ _| |_   | _ ) ___ _ _ _ __  __ _(_)_ _\n"          
+                     "\t\t\t  | |/ -_) '_| | '  \\/ _` | | ' </ _` (_-< | ' \\  \\__ \\ || / _` / _` | ' \\  | _ \\/ -_) '_| '  \\/ _` | | ' \\ \n"
+                     "\t\t\t  |_|\\___|_| |_|_|_|_\\__,_| |_|\\_\\__,_/__/_|_||_| |___/\\_,_\\__,_\\__,_|_||_| |___/\\___|_| |_|_|_\\__,_|_|_||_|\n");                                                                                                  
        }
        else
        {
-              printf("Anda Gagal Login\nHarap masukan username dan password yang sesuai");
-       }
+              printf("Anda Gagal Login\nHarap masukan username dan password yang sesuai\n");
        }
 }
 int kelompokQuestion1()
@@ -221,27 +264,27 @@ int kelompokQuestion1()
                                    }
                                    else
                                    {
-                                          printf("jawaban salah");
+                                          printf("jawaban salah\nSayang sekali Anda tidak memperoleh hadiah apa pun karena pengatahuan Anda masih sangat minim (-,-)\n");
                                    }
                             }
                             else
                             {
-                                   printf("jawaban salah");
+                                   printf("jawaban salah\nSayang sekali Anda tidak memperoleh hadiah apa pun karena pengatahuan Anda masih sangat minim (-,-)\n");
                             }
                      }
                      else
                      {
-                            printf("jawaban salah");
+                            printf("jawaban salah\nSayang sekali Anda tidak memperoleh hadiah apa pun karena pengatahuan Anda masih sangat minim (-,-)\n");
                      }
               }
               else
               {
-                     printf("jawaban salah");
+                     printf("jawaban salah\nSayang sekali Anda tidak memperoleh hadiah apa pun karena pengatahuan Anda masih sangat minim (-,-)\n");
               }
        }
        else
        {
-              printf("jawaban salah");
+              printf("jawaban salah\nSayang sekali Anda tidak memperoleh hadiah apa pun karena pengatahuan Anda masih sangat minim (-,-)\n");
        }
        return *ptr;
 }
@@ -370,7 +413,7 @@ int kelompokQuestion2()
 
 int kelompokQuestion3()
 {
-
+       int check;
        char jawaban;
        printf(" ______________________\n");
        printf("|Hadiah Anda saat ini: |\t"
@@ -426,44 +469,59 @@ int kelompokQuestion3()
                      if (jawaban == 'C' || jawaban == 'c')
                      {
                             printf("Benar!\n\n");
-                            printf(" ______________________\n");
-                            printf("|Hadiah Anda saat ini: |\t"
-                                   "pertanyaan ke 14\n");
-                            printf("|______________________|\t"
-                                   "Apa nama sungai yang melintasi kota Paris?\n");
-                            printf("|%-22d|\t"
-                                   "A.Sungai Seine\t\tB.Sungai Thames\n",
-                                   poin);
-                            printf("|______________________|\t"
-                                   "C.Sungai Rhine\t\tD.Sungai Danube\n");
-                            printf("Poin soal ini:%d\n", poin *= 2);
-                            printf("jawaban anda : ");
-                            scanf("%c", &jawaban);
+
+                            printf("Sekarang Anda masuk ke babak terakhir yang memaksa Anda mempertaruhkan semuanya. Dua pertanyaan terakhir dapat Anda jawab untuk memperoleh hadiah utama. NAmun, Anda juga dapat berhenti di sini.");
+                            printf("PERINGATAN: Apabila Anda gagal menjawab satu darai dua pertanyaan terakhir, maka smua hadiah Anda akan hangus.");
+                            printf("Apakah Anda ingin lanjut demi kesempatan mendapat hadiah utama?\n1.Lanjut apa pun yang terjadi\n2.Saya pikir sudah cukup. Saya berhenti saja.\n");
+                            printf("Jawaban Anda: ");
+                            scanf("%d", &check);
                             while (getchar() != '\n')
                                    ;
-                            if (jawaban == 'A' || jawaban == 'a')
+                            if (check == 1)
                             {
-                                   printf("Benar!\n\n");
                                    printf(" ______________________\n");
                                    printf("|Hadiah Anda saat ini: |\t"
-                                          "pertanyaan ke 15\n");
+                                          "pertanyaan ke 14\n");
                                    printf("|______________________|\t"
-                                          "Siapakah pelopor revolusi industri?\n");
+                                          "Apa nama sungai yang melintasi kota Paris?\n");
                                    printf("|%-22d|\t"
-                                          "A.Henry Ford\t\tB.Alexander Graham Bell\n",
+                                          "A.Sungai Seine\t\tB.Sungai Thames\n",
                                           poin);
                                    printf("|______________________|\t"
-                                          "C.Thomas Edison\t\tD.James Watt\n");
+                                          "C.Sungai Rhine\t\tD.Sungai Danube\n");
                                    printf("Poin soal ini:%d\n", poin *= 2);
                                    printf("jawaban anda : ");
                                    scanf("%c", &jawaban);
                                    while (getchar() != '\n')
-                                          ;                                 
-                                   if (jawaban == 'D' || jawaban == 'd')
-                                   {        
-                                          poin += 361600000;
-                                          printf("benar\t\tpoin anda %d\n", poin);
-                                          *ptr = poin;
+                                          ;
+                                   if (jawaban == 'A' || jawaban == 'a')
+                                   {
+                                          printf("Benar!\n\n");
+                                          printf(" ______________________\n");
+                                          printf("|Hadiah Anda saat ini: |\t"
+                                                 "pertanyaan ke 15\n");
+                                          printf("|______________________|\t"
+                                                 "Siapakah pelopor revolusi industri?\n");
+                                          printf("|%-22d|\t"
+                                                 "A.Henry Ford\t\tB.Alexander Graham Bell\n",
+                                                 poin);
+                                          printf("|______________________|\t"
+                                                 "C.Thomas Edison\t\tD.James Watt\n");
+                                          printf("Poin soal ini:%d\n", poin *= 2);
+                                          printf("jawaban anda : ");
+                                          scanf("%c", &jawaban);
+                                          while (getchar() != '\n')
+                                                 ;
+                                          if (jawaban == 'D' || jawaban == 'd')
+                                          {
+                                                 poin += 361600000;
+                                                 printf("benar\t\tpoin anda %d\n", poin);
+                                                 *ptr = poin;
+                                          }
+                                          else
+                                          {
+                                                 printf("jawaban salah");
+                                          }
                                    }
                                    else
                                    {
@@ -477,7 +535,7 @@ int kelompokQuestion3()
                      }
                      else
                      {
-                            printf("jawaban salah");
+                            printf("Pilihan bijak.");
                      }
               }
               else
