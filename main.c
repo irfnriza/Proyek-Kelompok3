@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
     fclose(fptr);
        }
     // memastikan argumen yang diinput sesuai ketentuan
-    if (argc != 3 && argc !=3)
+    if (argc != 3 && argc !=1)
     {
         printf("Login Gagal!\n");
         printf("Cara Login: ./FileAppProram username password");
