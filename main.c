@@ -303,6 +303,8 @@ int kelompokQuestion1()
 int kelompokQuestion2()
 {
     char jawaban;
+    
+    // Menampilkan teks pertanyaan dan pilihan jawaban ke layar
     printf(" ______________________\n");
     printf("|Hadiah Anda saat ini: |\t"
            "pertanyaan ke 6\n");
@@ -313,11 +315,19 @@ int kelompokQuestion2()
            poin);
     printf("|______________________|\t"
            "C.Afrika\t\tD.Eropa\n");
+    
+    // Menggandakan jumlah poin yang dimiliki oleh pemain
     printf("Poin soal ini:%d\n", poin *= 2);
+    
+    // Meminta pemain untuk memasukkan jawaban dengan menggunakan fungsi scanf()
     printf("jawaban anda : ");
     scanf("%c", &jawaban);
+    
+    // Membersihkan input buffer setelah meminta input dari pemain
     while (getchar() != '\n')
         ;
+    
+    // Memproses jawaban yang dimasukkan oleh pemain dengan menggunakan statement if
     if (jawaban == 'D' || jawaban == 'd')
     {
         printf("Benar!\n\n");
@@ -426,6 +436,8 @@ int kelompokQuestion3()
 {
     int check;
     char jawaban;
+    
+    // Menampilkan teks pertanyaan dan pilihan jawaban ke layar
     printf(" ______________________\n");
     printf("|Hadiah Anda saat ini: |\t"
            "pertanyaan ke 11\n");
@@ -436,11 +448,19 @@ int kelompokQuestion3()
            poin);
     printf("|______________________|\t"
            "C.Nikola Tesla\t\tD.Albert Einstein\n");
+    
+    // Menggandakan jumlah poin yang dimiliki oleh pemain
     printf("Poin soal ini:%d\n", poin *= 2);
+    
+    // Meminta pemain untuk memasukkan jawaban dengan menggunakan fungsi scanf()
     printf("jawaban anda : ");
     scanf("%c", &jawaban);
+    
+    // Membersihkan input buffer setelah meminta input dari pemain.
     while (getchar() != '\n')
         ;
+    
+    // Memproses jawaban yang dimasukkan oleh pemain dengan menggunakan statement if
     if (jawaban == 'B' || jawaban == 'b')
     {
         printf("Benar!\n\n");
